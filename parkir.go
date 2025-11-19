@@ -9,16 +9,15 @@ func sistemTarifParkir(jam *int, hari *bool, keanggotaan *bool) int {
 	} else {
 		tarif = tarif + 5000 + (*jam-2)*2000
 	}
-
-	if *hari == true {
-		tarif += 3000
-	}
 	if *keanggotaan == true {
 		if *jam <= 5 {
 			tarif -= tarif * 50 / 100
 		} else {
 			tarif -= tarif * 30 / 100
 		}
+	}
+	if *hari == true {
+		tarif += 3000
 	}
 	return tarif
 }
